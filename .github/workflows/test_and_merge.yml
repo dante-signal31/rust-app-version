@@ -37,7 +37,7 @@ jobs:
 
         - name: Get current rust app version from its Cargo.toml.
           id: foo
-          uses: dante-signal31/rust-app-version@main
+          uses: dante-signal31/rust-app-version@staging
           with:
             cargo_toml_folder: rust_app_version/tests/resources/
 
