@@ -17,8 +17,12 @@ def get_version(config_file: str = CONFIG_FILE) -> str:
     :return: Version value at Cargo.toml.
     """
     config = configparser.ConfigParser()
-    config.read(config_file)
-    return config["package"]["version"]
+    if os.path.exists(config_file):
+        config.read(config_file)
+        return config["package"]["version"]
+    else:
+        print(f"No Cargo.toml file found at provided path: {config_file}")
+        sys.exit(1)
 
 
 def parse_args(args: List[str]) -> Dict[str, str]:
