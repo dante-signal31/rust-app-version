@@ -22,7 +22,7 @@ I use this action to create automatically release for my pushed rust apps with t
 ```yaml
     - name: Get current rust app version from its Cargo.toml.
       id: foo
-      uses: dante-signal31/rust-app-version@main
+      uses: dante-signal31/rust-app-version@v1.0.0
       with:
          cargo_toml_folder: rust_app_folder/
          
