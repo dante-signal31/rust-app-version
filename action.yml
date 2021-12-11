@@ -1,0 +1,24 @@
+name: rust_app_version
+description: Get your current app version reading it from Cargo.toml.
+branding:
+  icon: at-sign
+  color: blue
+
+inputs:
+  cargo_toml_folder:
+    description: Folder path where Cargo.toml can be found. Defaults to project root folder.
+    required: false
+    default: "."
+
+outputs:
+  app_version:
+    description: App version as it is registered at Cargo.toml file.
+    value: ${{ steps.get-version.outputs.version }}
+
+runs:
+  using: composite
+  steps:
+    - name: Call script to read Cargo.toml.
+      id: get-version
+      shell: bash
+      run: echo "::set-output name=version::$( ${{ github.action_path }}/rust_app_version/get_version.py --cargo_toml_folder ${{ inputs.cargo_toml_folder }} )"
