@@ -9,6 +9,9 @@ Get your current app version reading it from Cargo.toml.
 
 I use this action to create automatically release for my pushed rust apps with that version as a tag.
 
+This Action has been used as an example in [this tutorial](https://www.dlab.ninja/2021/12/how-to-create-your-own-custom-actions.html) 
+about how to develop your own custom Actions.
+
 ## Inputs
 
 **Optional:**
