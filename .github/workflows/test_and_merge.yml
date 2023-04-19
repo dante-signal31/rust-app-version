@@ -44,7 +44,8 @@ jobs:
         - name: Check we got expected version.
           shell: bash
           run: |
-            [ "${{ steps.foo.outputs.app_version.value }}" = "0.9.2+post7" ] && echo "Correct version retrieved" || { echo Incorrect version retrieved: ${{ steps.foo.outputs.app_version }}; exit 1; }
+            echo "Retrieved version: ${{ steps.foo.outputs.app_version }}"
+            [ "${{ steps.foo.outputs.app_version }}" = "0.9.2+post7" ] && echo "Correct version retrieved" || { echo Incorrect version retrieved: ${{ steps.foo.outputs.app_version }}; exit 1; }
 
     merge-master:
       runs-on: ubuntu-latest
