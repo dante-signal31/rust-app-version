@@ -25,7 +25,7 @@ about how to develop your own custom Actions.
 ```yaml
     - name: Get current rust app version from its Cargo.toml.
       id: foo
-      uses: dante-signal31/rust-app-version@v1.1.0
+      uses: dante-signal31/rust-app-version@v1.2.0
       with:
          cargo_toml_folder: rust_app_folder/
          
