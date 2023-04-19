@@ -23,5 +23,5 @@ runs:
       shell: bash
       run: |
         retrieved_version=$( ${{ github.action_path }}/rust_app_version/get_version.py --cargo_toml_folder ${{ inputs.cargo_toml_folder }} )
-        echo "Retrieved version: $retrieved_version"
+        echo "Version got from Cargo.toml: $retrieved_version"
         echo "version=$retrieved_version" >> GITHUB_OUTPUT
