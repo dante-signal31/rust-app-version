@@ -21,4 +21,7 @@ runs:
     - name: Call script to read Cargo.toml.
       id: get-version
       shell: bash
-      run: echo "::set-output name=version::$( ${{ github.action_path }}/rust_app_version/get_version.py --cargo_toml_folder ${{ inputs.cargo_toml_folder }} )"
+      run: |
+        retrieved_version=$( ${{ github.action_path }}/rust_app_version/get_version.py --cargo_toml_folder ${{ inputs.cargo_toml_folder }} )
+        echo "Version got from Cargo.toml: $retrieved_version"
+        echo "version=$retrieved_version" >> $GITHUB_OUTPUT
